@@ -17,7 +17,7 @@ int main()
     fp = fopen("input.txt", "r");
 
     if(fp == NULL){
-        printf("Cannot open file.\n");
+        printf("File Error: Cannot open file input.txt.\n");
         return 0;
     }
 
@@ -78,11 +78,10 @@ int main()
                 ungetc(ch, fp);
 
             printf("%s \t\tNumber\n", str);
-        } else if(ch == '+' || ch == '-' || ch == '*' ||
-                ch == '=' || ch == '<' || ch == '>') {
+        } else if (strchr("+-*=<>!%&|^", ch) != NULL) {
             printf("%c \t\tOperator\n", ch);
-        } else if(ch == '(' || ch == ')' || ch == '{' ||
-                ch == '}' || ch == ';' || ch == ',') {
+        }
+        else if (strchr("(){}[];,", ch) != NULL) {
             printf("%c \t\tDelimiter\n", ch);
         }
     }
