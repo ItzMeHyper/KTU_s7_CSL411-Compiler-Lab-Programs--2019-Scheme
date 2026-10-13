@@ -35,7 +35,7 @@ int main(){
     INPUT = fopen("input.dat", "r");
 
     if (INPUT == NULL){
-        printf("Error opening input.dat\n");
+        printf("Error opening input.txt\n");
         return 1;
     }
 
@@ -44,10 +44,12 @@ int main(){
 
     int n, i, k, end;
 
-    fscanf(INPUT, "%d", &n);
+    printf("Enter the number of states: ");
+    scanf("%d", &n);
 
+    printf("Enter the states:\n");
     for (k = 0; k < n; k++){
-        fscanf(INPUT, "%s", states[k]);
+        scanf("%s", states[k]);
     }
 
     for (k = 0; k < n; k++){
@@ -71,13 +73,7 @@ int main(){
         }
 
         display(i);
-
         rewind(INPUT);
-        fscanf(INPUT, "%d", &n);
-
-        for (i = 0; i < n; i++){
-            fscanf(INPUT, "%s", states[i]);
-        }
     }
 
     fclose(INPUT);
