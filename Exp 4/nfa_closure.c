@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
-char result[20][20];
+char result[20][20], states[20][20];
 char copy[20];
-char states[20][20];
 
 void add_state(char a[], int *count){
     int i;
@@ -39,8 +38,7 @@ int main(){
         return 1;
     }
 
-    char state[20];
-    char state1[20], input[20], state2[20];
+    char state[20], state1[20], state2[20], input[20];
 
     int n, i, k, end;
 
