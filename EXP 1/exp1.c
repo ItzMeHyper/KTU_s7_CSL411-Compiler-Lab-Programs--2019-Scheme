@@ -2,8 +2,7 @@
 #include <ctype.h>
 #include <string.h>
 
-int main()
-{
+int main(){
     FILE *fp;
     char ch, str[50];
     char keywords[][10] = {
@@ -28,11 +27,11 @@ int main()
         if(ch == '/'){
             char next = fgetc(fp);
 
-            if(next == '/' || '*'){
+            if(next == '/' || next == '*'){
                 while((ch = fgetc(fp)) != '\n' && ch != EOF);
                 continue;
             } else {
-                printf("/ Operator\n");
+                printf("/ \t\tOperator\n");
                 ungetc(next, fp);
                 continue;
             }
